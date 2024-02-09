@@ -1,0 +1,33 @@
+/*Font Family : Poppins*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: "#60d6ff";
+  --shades: "#101820";
+  --tailwindColorDark: "#0e1729";
+  --tailwindColorGray: "#1d293a";
+  --bright: "#fee715";
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  overflow-x: hidden;
+  background-color: #0e1729;
+  color: #60d6ff;
+}

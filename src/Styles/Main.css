@@ -1,0 +1,412 @@
+/*--- 01 Typography System:
+
+html : {
+font-size : 62.5%;
+}
+
+FONT SIZE : 
+- Normal Text : / 10 / 12 / 14 / 16 / 18 /
+- Sub-Titles :  / 20 / 24 / 30 / 36 /
+- Titles : / 44 / 52 / 62 / 74 / 86 / 98 /
+
+ Font weights
+- Default : 400
+- Medium : 500
+- Semi-bold : 600
+- Bold : 700
+
+  Line heights : 
+- Default : 1 
+- Small : 1.05
+- Medium : 1.2
+- Large : 1.8
+
+- Paragraph default : 1.6   
+- For small text, use line height of 1.5≥
+- For titles or sub-titles, use line height of 1.5≤
+
+Letter Spacing :
+- 0.5px
+- 0.75px
+
+
+--- 02 Colors
+
+- Brand color (Primary): 
+- Tint : 
+- Shades :
+- Accent : 
+- Greys : 
+
+
+--- 05 SHADOWS
+
+
+--- 06 BORDER-RADIUS
+
+Default : 9px
+
+
+--- 07 WHITESPACE
+
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+FONT-NAME? */
+
+:root {
+  --accent-color: #60d6ff;
+  --shade-color: #101820;
+  --shade2-color: #1d293a;
+  --md-border-radius: 8px;
+  --lg-border-radius: 80px;
+}
+/*
+  /////////////////////////////[App container]
+  */
+
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 12px;
+  background-color: var(--shade2-color);
+}
+
+.main-container {
+  width: 100%;
+  margin-top: 4.2rem;
+  display: grid;
+  grid-template-columns: 30fr 70fr;
+  column-gap: 2.4rem;
+}
+
+/*
+  /////////////////////////////[Top Anime Container]
+  */
+
+.anime-trailer {
+  height: 450px;
+}
+
+.top-and-upcoming-anime-container {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.top-anime-container-title {
+  text-align: center;
+  font-weight: 700;
+  border-radius: var(--lg-border-radius);
+  font-size: 2rem;
+}
+
+.anime-container-title {
+  text-align: center;
+  font-weight: 700;
+  background-color: var(--accent-color);
+  padding: 1rem;
+  color: #101820;
+  border-radius: var(--lg-border-radius);
+  font-size: 2rem;
+}
+
+.go-up.active {
+  transform: scale(1);
+  opacity: 1;
+  transition: 0.2s ease-in-out;
+}
+
+.go-up.not-active {
+  transform: scale(0.5);
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+
+.selected-anime-image button {
+  box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.308);
+}
+
+.char-data {
+  scrollbar-width: thin;
+  scrollbar-color: #999999 #f0f0f0; /* thumb and track color */
+}
+
+/* For Webkit (Chrome, Safari, Edge) */
+.char-data::-webkit-scrollbar {
+  width: 8px; /* width of the scrollbar */
+}
+
+/* Track */
+.char-data::-webkit-scrollbar-track {
+  background: transparent; /* color of the track */
+}
+
+/* Handle */
+.char-data::-webkit-scrollbar-thumb {
+  background: #999999; /* color of the thumb */
+}
+
+/* Handle on hover */
+.char-data::-webkit-scrollbar-thumb:hover {
+  background: #555555; /* color of the thumb on hover */
+}
+
+/*
+  /////////////////////////////[Media Queries] 1592px / 99.5em
+  */
+
+@media screen and (width <=99.5em) {
+  .anime-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .swiper-slide img {
+    height: 220px;
+  }
+
+  .footer h2 {
+    font-size: 1.8rem;
+  }
+  .footer p {
+    font-size: 1.2rem;
+  }
+
+  .anime-trailer,
+  .anime-no-trailer {
+    width: 70%;
+  }
+
+  .anime-char-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*
+  /////////////////////////////[Media Queries] 1196px / 74.75em
+  */
+
+@media screen and (width <=74.75em) {
+  .main-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    width: 100%;
+  }
+
+  .top-anime-list-title,
+  .upcoming-anime-list-title,
+  .top-anime-list-desc,
+  .upcoming-anime-list-desc {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .swiper-slide img {
+    height: 280px;
+  }
+
+  .anime-list {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .anime span {
+    font-size: 1.2rem;
+  }
+
+  .selected-anime-image,
+  .selected-anime-information {
+    height: 100%;
+  }
+
+  .selected-anime-img {
+    margin-bottom: 1.2rem;
+    margin-inline: auto;
+    height: 300px;
+    width: 60%;
+  }
+
+  .selected-anime-information {
+    font-size: 1.4rem;
+  }
+
+  .anime-trailer,
+  .anime-no-trailer {
+    width: 80%;
+  }
+
+  .anime-char-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*
+  /////////////////////////////[Media Queries] 900px / 56.25em
+  */
+
+@media screen and (width <=56.25em) {
+  .input-form {
+    width: 80%;
+  }
+
+  input::placeholder {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 100%;
+  }
+
+  .main-container {
+    column-gap: 0rem;
+  }
+
+  .anime-list {
+    gap: 0.8rem;
+    padding: 1.2rem;
+  }
+
+  .swiper-slide img {
+    height: 300px;
+  }
+
+  .anime span {
+    font-size: 1rem;
+  }
+  .swiper-pagination .swiper-pagination-bullet {
+    width: 5px; /* Atur lebar dots */
+    border: 5px solid #60d6ff;
+    height: 5px; /* Atur tinggi dots */
+    margin: 0 5px; /* Atur jarak antara dots */
+    border-radius: 50%; /* Membuat dots menjadi bulat */
+    background-color: #555; /* Warna default dots */
+    background-color: #26288d;
+    background-color: #000279;
+  }
+}
+
+/*
+  /////////////////////////////[Media Queries] 778px / 48.625em
+  */
+
+@media screen and (width <=48.625em) {
+  .main-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .main-container .top-and-upcoming-anime-container {
+    position: relative;
+  }
+
+  .anime-list {
+    gap: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .anime span {
+    font-size: 1.3rem;
+  }
+
+  .footer-wrapper {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2.5rem;
+  }
+
+  .footer-portofolio {
+    grid-column: span 2;
+  }
+
+  .top-anime-list-title,
+  .upcoming-anime-list-title,
+  .top-anime-list-desc,
+  .upcoming-anime-list-desc {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
+}
+
+/*
+  /////////////////////////////[Media Queries] 600px / 37.5em
+  */
+
+@media screen and (width <=37.5em) {
+  .app-container {
+    width: 100%;
+  }
+
+  .anime-container-title-wrapper {
+    padding-inline: 1.2rem;
+  }
+
+  .anime-container-title h1 {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .top-and-upcoming-anime-container {
+    margin-inline: auto;
+    width: 95%;
+  }
+
+  .footer-wrapper {
+    grid-template-columns: 1fr;
+    row-gap: 3.2rem;
+  }
+
+  .footer-portofolio {
+    grid-column: span 1;
+  }
+
+  .anime-trailer,
+  .anime-no-trailer {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/*
+  /////////////////////////////[Media Queries] 425px / 26.5625em
+  */
+
+@media screen and (width <=26.5625em) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+  .input-form {
+    width: 100%;
+  }
+
+  .anime-trailer,
+  .anime-no-trailer {
+    width: 100%;
+    height: 250px;
+  }
+
+  .anime-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .swiper-slide img {
+    height: 220px;
+  }
+
+  .anime-char-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .top-anime-list-title,
+  .upcoming-anime-list-title,
+  .top-anime-list-desc,
+  .upcoming-anime-list-desc {
+    font-size: 1.3rem;
+    padding: 0.8rem;
+  }
+}

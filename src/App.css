@@ -1,0 +1,44 @@
+.add-favourite {
+  position: relative;
+  width: max-content;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-favourite::after,
+.remove-favourite::after {
+  position: absolute;
+  background-color: #f4f4f4;
+  color: #1c1c1c;
+  opacity: 0;
+  left: 50%;
+  font-size: 1.2rem;
+  bottom: -10%;
+  padding: 0.8rem;
+  width: fit-content;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.add-favourite:hover::after {
+  content: "Add Favourite";
+  position: absolute;
+  background-color: #f4f4f4;
+  color: #1c1c1c;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  left: 50%;
+  bottom: -100%;
+  transform: translateX(-50%);
+}
+.remove-favourite:hover::after {
+  content: "Remove Favourite";
+  position: absolute;
+  background-color: #f4f4f4;
+  color: #1c1c1c;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  left: 50%;
+  bottom: -100%;
+  transform: translateX(-50%);
+}
