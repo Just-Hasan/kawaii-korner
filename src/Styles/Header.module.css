@@ -1,0 +1,6 @@
+nav :global(.active) {
+  background-color: #f4f4f4;
+  color: #0e1729;
+  padding: 8px;
+  border-radius: 100px;
+}
