@@ -19,11 +19,11 @@ export default function Seiyuu() {
         let request;
         if (searchValue === "") {
           request = await fetch(
-            `https://api.jikan.moe/v4/people?order_by=favorites&sort=desc`,
+            `https://api.jikan.moe/v4/people?order_by=favorites&sort=desc`
           );
         } else if (searchValue !== "") {
           request = await fetch(
-            `https://api.jikan.moe/v4/people?q=${searchValue}&order_by=favorites&sort=desc`,
+            `https://api.jikan.moe/v4/people?q=${searchValue}&order_by=favorites&sort=desc`
           );
         }
 
@@ -39,17 +39,17 @@ export default function Seiyuu() {
     getPeople();
   }, [searchValue]);
   return (
-    <div className="tablet_778:grid w-[90%] mx-auto  mobile_s:flex mobile_s:flex-col gap-x-8 pt-16">
+    <div className="tablet_778:grid w-[90%] mx-auto mobile_s:flex mobile_s:flex-col gap-x-8 pt-16">
       {person && person.length !== 0 && searchValue === "" && (
-        <h1 className="w-full p-4 mb-8 text-3xl -fu font-black -xl bg-[#f4f4f4] text-[#0e1729] h-max">
+        <h1 className="w-full rounded-md p-4 mb-8 text-3xl -fu font-black -xl bg-[#f4f4f4] text-[#0e1729] h-max">
           Seiyuu & Directors
         </h1>
       )}
       {person && person.length === 0 && searchValue !== "" && (
-        <h1 className="p-4 mb-8 text-3xl -fu font-black -xl bg-[#f4f4f4] text-[#0e1729] h-max">{`Sorry, we cannot find any results for ${searchValue}`}</h1>
+        <h1 className="p-4 rounded-md mb-8 text-3xl -fu font-black -xl bg-[#f4f4f4] text-[#0e1729] h-max">{`Sorry, we cannot find any results for ${searchValue}`}</h1>
       )}
       {person && person.length > 0 && searchValue !== "" && (
-        <h1 className="p-4 mb-8 text-3xl -fu font-black -xl bg-[#f4f4f4] text-[#0e1729] h-max">{`Found ${person?.length} result for ${searchValue}`}</h1>
+        <h1 className="p-4 rounded-md mb-8 text-3xl -fu font-black -xl bg-[#f4f4f4] text-[#0e1729] h-max">{`Found ${person?.length} result for ${searchValue}`}</h1>
       )}
       {personLoading && <SpinningRing>Loading...</SpinningRing>}
       <div className="grid w-full gap-4 mobile_s:grid-cols-3 tablet_778:grid-cols-6 place-items-center laptop_1592:grid-cols-8 h-max">
@@ -63,7 +63,7 @@ export default function Seiyuu() {
               //   >
               //   </Link>
               <div
-                className="relative w-full h-full overflow-hidden -xl"
+                className="relative w-full h-full overflow-hidden rounded-md -xl"
                 key={i}
               >
                 <Link to={`/Seiyuu/${person.mal_id}`}>

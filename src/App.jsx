@@ -48,22 +48,22 @@ export default function App() {
   const [sfw, setSfw] = useLocalStorage(false, "sfw");
   const [favouriteAnime, setFavouriteAnime] = useLocalStorage(
     [],
-    "favourite_anime",
+    "favourite_anime"
   );
 
   const [favouriteManga, setFavouriteManga] = useLocalStorage(
     [],
-    "favourite_manga",
+    "favourite_manga"
   );
 
   const [favouriteCharacter, setFavouriteCharacter] = useLocalStorage(
     [],
-    "favourite_character",
+    "favourite_character"
   );
 
   const [favouriteSeiyuu, setFavouriteSeiyuu] = useLocalStorage(
     [],
-    "favourite_seiyuu",
+    "favourite_seiyuu"
   );
 
   const [toggleDeleteAll, setToggleDeleteAll] = useState(false);
@@ -165,12 +165,12 @@ export default function App() {
           gettingAPIData = await fetch("https://api.jikan.moe/v4/seasons/now");
         } else {
           gettingAPIData = await fetch(
-            `https://api.jikan.moe/v4/anime?q=${searchValue}&sfw=${sfw}`,
+            `https://api.jikan.moe/v4/anime?q=${searchValue}&sfw=${sfw}`
           );
         }
         if (!gettingAPIData.ok)
           throw new Error(
-            "Please check your internet connection / Try to reload the page",
+            "Please check your internet connection / Try to reload the page"
           );
         const animeData = await gettingAPIData.json();
         const { data } = animeData;

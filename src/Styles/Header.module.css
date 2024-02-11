@@ -4,3 +4,7 @@ nav :global(.active) {
   padding: 8px;
   border-radius: 100px;
 }
+
+nav li:hover {
+  font-weight: bold;
+}
