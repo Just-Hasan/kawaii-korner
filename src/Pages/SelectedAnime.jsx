@@ -26,20 +26,20 @@ export default function SelectedAnime() {
     [],
     "anime",
     id,
-    "full",
+    "full"
   );
   const [selectedAnimeCharacter, loadingAnimeChar] = useFetchData(
     [],
     "anime",
     id,
-    "characters",
+    "characters"
   );
 
   const [selectedAnimeStreamingLink, loadingAnimeStreamLink] = useFetchData(
     [],
     "anime",
     id,
-    "streaming",
+    "streaming"
   );
 
   const [selectedAnimeReccomendations, loadingAnimeReccomendations] =
@@ -80,13 +80,13 @@ export default function SelectedAnime() {
     };
 
     setFavouriteAnime((curFavourite) =>
-      curFavourite === null ? [animeData] : [animeData, ...curFavourite],
+      curFavourite === null ? [animeData] : [animeData, ...curFavourite]
     );
   }
 
   function handleRemoveFavouriteAnime() {
     setFavouriteAnime((curFavourite) =>
-      curFavourite.filter((anime) => anime.id !== selectedAnime.mal_id),
+      curFavourite.filter((anime) => anime.id !== selectedAnime.mal_id)
     );
   }
 

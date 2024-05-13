@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAnimeData } from "../App";
 import { Link } from "react-router-dom";
 import SpinningRing from "../Components/LoadingAnimation/SpinningRing";
+
 export default function Seiyuu() {
   const { searchValue, setSearchValue } = useAnimeData();
   const [person, setPerson] = useState([]);

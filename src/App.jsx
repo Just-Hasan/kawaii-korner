@@ -240,7 +240,6 @@ export default function App() {
             </Route>
             <Route path="/Character" element={<CharacterPage />} />
             <Route path="/TopCharacters" element={<TopCharacters />} />
-
             <Route
               path="/anime/:id/:id/characters"
               element={<AllCharacter />}
