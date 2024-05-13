@@ -173,7 +173,9 @@ export default function App() {
             "Please check your internet connection / Try to reload the page"
           );
         const animeData = await gettingAPIData.json();
+
         const { data } = animeData;
+
         if (data.length === 0) {
           setAnime(data);
           throw new Error("Anime not found");
